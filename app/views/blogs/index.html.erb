@@ -1,0 +1,29 @@
+
+<h1>List of blogs</h1>
+
+<p><%= notice %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Contents</th></th>
+  </tr>
+
+<% @blogs.each do |blog| %>
+  <tr>
+  <tr>
+    <td><%= blog.name %></td>
+    <td><%= blog.content %></td>
+    <td><%= blog.date %></td>
+    <td><%= link_to link_to 'Check the details', blog_path(blog.id) %></td>
+    <td><%= link_to link_to "Edit this blog", edit_blog_path(blog.id) %></td>
+    <!-- Define here! -->
+    <td><%= link_to link_to 'Delete this blos', blog_path(blog.id), method: :delete %></td>
+  </tr>
+  </tr>
+<% end %>
+
+</table>
+
+<br>
+
+<%= link_to 'Post a new blog', new_blog_path %>

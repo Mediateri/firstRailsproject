@@ -1,0 +1,16 @@
+<h3>Send it with the following contents.</h3>
+
+<%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
+  <%= form.hidden_field :name %>
+  <%= form.hidden_field :dob %>
+
+  <p>Title:<%= @blog.name %></p>
+  <p>Body:<%= @blog.dob %></p>
+  <%= form.submit  "submit" %>
+<% end %>
+
+<%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :name %>
+  <%= form.hidden_field :dob %>
+  <%= form.submit "back" %>
+<% end %>
